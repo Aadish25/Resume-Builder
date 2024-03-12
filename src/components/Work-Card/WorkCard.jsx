@@ -29,7 +29,6 @@ export default function WorkCard({ parentIndex, open }) {
   const handleChange = (e, index) => {
     if (e.target.name == "startDate" || e.target.name == "endDate") {
       const parts = e.target.value.split("-");
-      console.log(parts);
       const year2 = parts[0];
       const monthIndex = parseInt(parts[1]) - 1; // Subtract 1 to match array index
       const dateFinal = `${monthNames[monthIndex]} ${year2}`;

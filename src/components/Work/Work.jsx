@@ -19,7 +19,7 @@ export default function Work() {
   };
   const workDetailsArrStringified = JSON.stringify(workDetailsArr);
   const handleClickNext = () => {
-    localStorage.setItem("workDetails",workDetailsArrStringified);
+    localStorage.setItem("workDetails", workDetailsArrStringified);
   };
   return (
     <div className="flex gap-2 padding w-full flex-col lg:flex-row">
@@ -44,7 +44,6 @@ export default function Work() {
             Tell us about your most recent job.
           </p>
           {workDetailsArr.map((item, index) => {
-            // console.log(index);
             return (
               <WorkCard key={index} parentIndex={index} open={item.isOpen} />
             );
