@@ -37,11 +37,12 @@ export const MacbookScroll = ({
   badge?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", 'end start'],
-  });
+const { scrollYProgress } = useScroll({
+  target: ref,
+  offset: ['start start', 'end start'], // Animation starts when the top of the div aligns with the top of the viewport and ends when the bottom of the div aligns with the bottom of the viewport
+});
 
+  
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export const MacbookScroll = ({
     [0, 0.3],
     [0.6, isMobile ? 1 : 1.5]
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 1000]);
   const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
   const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);

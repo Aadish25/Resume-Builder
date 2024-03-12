@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function MacbookScrollDemo() {
   return (
-    <div className="dark:bg-[#0B0B0F] bg-white w-full mb-96">
+    <div className="dark:bg-[#0B0B0F] bg-white max-h-screen w-full mb-96">
       <MacbookScroll
         title={<span className="text-4xl">Resume Builder</span>}
         badge={
@@ -13,7 +13,7 @@ export default function MacbookScrollDemo() {
           </Link>
         }
         src={`https://www.my-resume-templates.com/wp-content/uploads/2023/05/student-resume-example.jpg`}
-        showGradient={true}
+        showGradient={false}
       />
     </div>
   );
