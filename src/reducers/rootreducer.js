@@ -5,6 +5,7 @@ import work from "./work-exp/work";
 import education from "./education/education";
 import skills from "./skills/skills";
 import projects from "./projects/projects";
+import addExp from "./addExp/addExp";
 
 const rootReducer = combineReducers({
   details: details,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   education: education,
   skills: skills,
   projects: projects,
+  additionalExp: addExp,
 });
 
 export default rootReducer;

@@ -48,16 +48,16 @@ export default function Home() {
   return (
     <div className="flex gap-2 padding w-full flex-col lg:flex-row">
       <div className="flex flex-col-reverse lg:flex-col gap-6 w-full  lg:min-w-1/2  px-6 py-3">
-        <div className="flex justify-between items-center">
-          <button className="btn  btn-accent">Templates</button>
+        <div className="flex justify-between items-center flex-col sm:flex-row gap-2">
+          <button className="btn  btn-accent max-sm:w-full">Templates</button>
           <button
             onClick={() => document.getElementById("my_modal_2").showModal()}
-            className="btn btn-outline btn-primary"
+            className="btn btn-outline btn-primary max-sm:w-full"
           >
             Preview
           </button>
           <Link to={"/editor/education"}>
-            <button onClick={handleClickNext} className="btn btn-primary">
+            <button onClick={handleClickNext} className="btn btn-primary max-sm:w-full">
               Next
             </button>
           </Link>

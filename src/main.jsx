@@ -10,6 +10,7 @@ import Work from "./components/Work/Work.jsx";
 import Education from "./components/Education/Education.jsx";
 import Skills from "./components/Skills/Skills.jsx";
 import Projects from "./components/Projects/Projects.jsx";
+import AdditionalExp from "./components/AdditionalExp/AdditionalExp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/editor/skills",
         element: <Skills />,
+      },
+      {
+        path: "/editor/additional-experience",
+        element: <AdditionalExp />,
       },
     ],
   },

@@ -51,7 +51,7 @@ export default function Skills() {
           >
             Preview
           </button>
-          <Link to={"/editor/skills"}>
+          <Link to={"/editor/additional-experience"}>
             <button className="btn btn-primary" onClick={handleClickNext}>
               Next
             </button>
