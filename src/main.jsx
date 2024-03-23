@@ -8,6 +8,8 @@ import Details from "./components/Details/Details.jsx";
 import Home from "./components/Home/Home.tsx";
 import Work from "./components/Work/Work.jsx";
 import Education from "./components/Education/Education.jsx";
+import Skills from "./components/Skills/Skills.jsx";
+import Projects from "./components/Projects/Projects.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,13 +24,20 @@ const router = createBrowserRouter([
         element: <Details />,
       },
       {
+        path: "/editor/education",
+        element: <Education />,
+      },
+      {
         path: "/editor/work-experience",
         element: <Work />,
       },
-
       {
-        path: "/editor/education",
-        element: <Education />,
+        path: "/editor/projects",
+        element: <Projects />,
+      },
+      {
+        path: "/editor/skills",
+        element: <Skills />,
       },
     ],
   },

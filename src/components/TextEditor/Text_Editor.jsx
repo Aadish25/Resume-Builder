@@ -1,13 +1,9 @@
 import { Editor } from "@tinymce/tinymce-react";
-import { useDispatch } from "react-redux";
-import { setWorkDetails } from "../../reducers/work-exp/work";
-
-export default function Text_Editor({ index }) {
-  const dispatch = useDispatch();
+export default function Text_Editor({ index, name, setDetails, dispatch }) {
   const handleEditorChange = (newContent) => {
     dispatch(
-      setWorkDetails({
-        name: "workSummary",
+      setDetails({
+        name: name,
         value: newContent,
         index: index,
       })

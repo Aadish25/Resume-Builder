@@ -1,4 +1,7 @@
 import Temp_Details from "../SingleTemp/Temp_Details";
+import Temp_Education from "../SingleTemp/Temp_Education";
+import Temp_Projects from "../SingleTemp/Temp_Projects";
+import Temp_Skills from "../SingleTemp/Temp_Skills";
 import Temp_Work_Exp from "../SingleTemp/Temp_Work_Exp";
 
 export default function Template1() {
@@ -15,7 +18,10 @@ export default function Template1() {
           workplace safety standards. Worked with OSHA to ensure that all safety
           regulations are followed.
         </p>
+        <Temp_Education />
         <Temp_Work_Exp />
+        <Temp_Projects />
+        <Temp_Skills />
       </div>
     </div>
   );

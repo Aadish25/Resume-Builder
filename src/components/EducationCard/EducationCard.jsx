@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import {
-  deleteWorkArr,
-  setWorkDetails,
-  setWorkOpen,
-} from "../../reducers/work-exp/work";
 import Text_Editor from "../TextEditor/Text_Editor";
+import {
+  deleteEducationArr,
+  setEducationDetails,
+  setEducationOpen,
+} from "../../reducers/education/education";
 
-export default function WorkCard({ parentIndex, open }) {
+export default function EducationCard({ parentIndex, open }) {
   const monthNames = [
     "January",
     "February",
@@ -23,8 +23,10 @@ export default function WorkCard({ parentIndex, open }) {
   ];
   const dispatch = useDispatch();
   const formDetails = [
-    { label: "Position Title", name: "positionTitle" },
-    { label: "Company Name", name: "companyName" },
+    { label: "School Name", name: "schoolName" },
+    { label: "School Location", name: "schoolLocation" },
+    { label: "Degree", name: "degree" },
+    { label: "Field of Study", name: "fieldOfStudy" },
   ];
   const handleChange = (e, index) => {
     if (e.target.name == "startDate" || e.target.name == "endDate") {
@@ -33,7 +35,7 @@ export default function WorkCard({ parentIndex, open }) {
       const monthIndex = parseInt(parts[1]) - 1; // Subtract 1 to match array index
       const dateFinal = `${monthNames[monthIndex]} ${year2}`;
       dispatch(
-        setWorkDetails({
+        setEducationDetails({
           name: e.target.name,
           value: dateFinal,
           index: index,
@@ -41,7 +43,7 @@ export default function WorkCard({ parentIndex, open }) {
       );
     } else {
       dispatch(
-        setWorkDetails({
+        setEducationDetails({
           name: e.target.name,
           value: e.target.value,
           index: index,
@@ -52,14 +54,14 @@ export default function WorkCard({ parentIndex, open }) {
   const handleChangeToggle = (e, index) => {
     e.target.checked
       ? dispatch(
-          setWorkDetails({
+          setEducationDetails({
             name: "endDate",
             value: "Present",
             index: index,
           })
         )
       : dispatch(
-          setWorkDetails({
+          setEducationDetails({
             name: "endDate",
             value: "",
             index: index,
@@ -76,16 +78,16 @@ export default function WorkCard({ parentIndex, open }) {
           {open ? (
             <i
               className="fa-solid fa-chevron-up"
-              onClick={() => dispatch(setWorkOpen(parentIndex))}
+              onClick={() => dispatch(setEducationOpen(parentIndex))}
             ></i>
           ) : (
             <i
-              onClick={() => dispatch(setWorkOpen(parentIndex))}
+              onClick={() => dispatch(setEducationOpen(parentIndex))}
               className="fa-solid fa-chevron-down"
             ></i>
           )}
           <i
-            onClick={() => dispatch(deleteWorkArr(parentIndex))}
+            onClick={() => dispatch(deleteEducationArr(parentIndex))}
             className="fa-solid fa-trash-can"
           ></i>
         </div>
@@ -131,7 +133,7 @@ export default function WorkCard({ parentIndex, open }) {
               ></input>
               <div className="form-control ">
                 <label className="label cursor-pointer">
-                  <span className="label-text ">Currently Employed</span>
+                  <span className="label-text ">I currently study here</span>
                   <input
                     type="checkbox"
                     className="toggle toggle-sm "
@@ -142,9 +144,14 @@ export default function WorkCard({ parentIndex, open }) {
             </label>
           </div>
           <div className="w-full">
-            <p className="label-text label">Work Summary</p>
+            <p className="label-text label">Description</p>
             <div className="h-full w-full">
-              <Text_Editor index={parentIndex} name={"workSummary"} setDetails={setWorkDetails} dispatch={dispatch}/>
+              <Text_Editor
+                index={parentIndex}
+                name={"description"}
+                setDetails={setEducationDetails}
+                dispatch={dispatch}
+              />
             </div>
           </div>
         </div>

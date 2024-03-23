@@ -56,7 +56,7 @@ export default function Home() {
           >
             Preview
           </button>
-          <Link to={"/editor/work-experience"}>
+          <Link to={"/editor/education"}>
             <button onClick={handleClickNext} className="btn btn-primary">
               Next
             </button>

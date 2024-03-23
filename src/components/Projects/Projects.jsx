@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
 import Template1 from "../Temp_All/Template_1";
 import Drawer from "../Drawer/Drawer";
-import WorkCard from "../Work-Card/WorkCard";
 import { useDispatch, useSelector } from "react-redux";
-import { setWorkArr, setWorkOpen } from "../../reducers/work-exp/work";
+import ProjectCard from "../Project_Card/ProjectCard";
+import { setProjectArr, setProjectOpen } from "../../reducers/projects/projects";
 
-export default function Work() {
+export default function Projects() {
   const dispatch = useDispatch();
-  const workDetailsArr = useSelector((state) => state.work_exp.workArr);
-  const handleworkCards = async () => {
+  const projectDetailsArr = useSelector((state) => state.projects.projectsArr);
+  const handleProjectsCards = async () => {
     await new Promise((resolve) => {
-      dispatch(setWorkArr());
+      dispatch(setProjectArr());
       resolve(); // Resolve the promise once dispatch(setWorkArr()) completes
     });
 
     // Code to execute after dispatch(setWorkArr())
-    dispatch(setWorkOpen(workDetailsArr.length));
+    dispatch(setProjectOpen(projectDetailsArr.length));
   };
-  const workDetailsArrStringified = JSON.stringify(workDetailsArr);
+  const projectsDetailsArrStringified = JSON.stringify(projectDetailsArr);
   const handleClickNext = () => {
-    localStorage.setItem("workDetails", workDetailsArrStringified);
+    localStorage.setItem("projectsDetails", projectsDetailsArrStringified);
   };
   return (
     <div className="flex gap-2 padding w-full flex-col lg:flex-row">
@@ -32,28 +32,28 @@ export default function Work() {
           >
             Preview
           </button>
-          <Link to={"/editor/projects"}>
+          <Link to={"/editor/skills"}>
             <button className="btn btn-primary" onClick={handleClickNext}>
               Next
             </button>
           </Link>
         </div>
-        <div className="flex  font-primary py-3 px-6 rounded-md flex-col gap-2 border-t-2 shadow-md shadow-red-700 border-red-700">
-          <h1 className="text-2xl font-bold">Professional Experience</h1>
+        <div className="flex  font-primary py-3 px-6 rounded-md flex-col gap-2 border-t-2 shadow-md shadow-purple-700 border-purple-700">
+          <h1 className="text-2xl font-bold">Projects</h1>
           <p className="text-sm text-slate-400">
-            Tell us about your most recent job.
+            Tell us about your projects.
           </p>
-          {workDetailsArr.map((item, index) => {
+          {projectDetailsArr.map((item, index) => {
             return (
-              <WorkCard key={index} parentIndex={index} open={item.isOpen} />
+              <ProjectCard key={index} parentIndex={index} open={item.isOpen} />
             );
           })}
 
           <button
-            className=" btn-outline mt-3 btn max-w-max bg-red-300"
-            onClick={handleworkCards}
+            className=" btn-outline mt-3 btn max-w-max bg-purple-300"
+            onClick={handleProjectsCards}
           >
-            Add more work experience
+            Add more projects
           </button>
         </div>
       </div>
