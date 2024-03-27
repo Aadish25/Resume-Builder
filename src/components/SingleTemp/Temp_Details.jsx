@@ -6,7 +6,7 @@ export default function Temp_Details() {
   const linksArrRedux = useSelector((state) => state.details_links.linksArr);
   const linksArrLocal = JSON.parse(localStorage.getItem("detailsLinks"));
   const linksArr =
-    pathname === "/editor/details/" ? linksArrRedux : linksArrLocal;
+    pathname === "/editor/details" ? linksArrRedux : linksArrLocal;
   const detailsRedux = useSelector((state) => state.details);
   const detailsLocal = JSON.parse(localStorage.getItem("details"));
   const {
@@ -20,7 +20,7 @@ export default function Temp_Details() {
     state,
     country,
     zipCode,
-  } = pathname === "/editor/details/" ? detailsRedux : detailsLocal;
+  } = pathname === "/editor/details" ? detailsRedux : detailsLocal;
   const subDetails = [phone, email];
   const basicDetails = subDetails.map((item, index) => {
     return (

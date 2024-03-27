@@ -7,6 +7,7 @@ import {
 } from "../../reducers/education/education";
 import EducationCard from "../EducationCard/EducationCard";
 import { useDispatch, useSelector } from "react-redux";
+import Navbar from "../Navbar/Navbar";
 
 export default function Education() {
   const dispatch = useDispatch();
@@ -25,18 +26,20 @@ export default function Education() {
     localStorage.setItem("educationDetails", educDetailsArrStringified);
   };
   return (
-    <div className="flex gap-2 padding w-full flex-col lg:flex-row">
+    <>
+    <Navbar/>
+    <div className="flex gap-2 padding w-full flex-col lg:flex-row absolute top-10">
       <div className="flex flex-col-reverse lg:flex-col gap-6 w-full  lg:w-1/2  px-6 py-3">
-        <div className="flex justify-between items-center">
-          <button className="btn  btn-accent">Templates</button>
+        <div className="flex max-sm:flex-col gap-2 justify-between items-center">
+          <button className="btn  btn-accent max-sm:w-full">Templates</button>
           <button
             onClick={() => document.getElementById("my_modal_2").showModal()}
-            className="btn btn-outline btn-primary"
+            className="btn btn-outline btn-primary max-sm:w-full"
           >
             Preview
           </button>
           <Link to={"/editor/work-experience"}>
-            <button className="btn btn-primary" onClick={handleClickNext}>
+            <button className="btn btn-primary max-sm:w-full" onClick={handleClickNext}>
               Next
             </button>
           </Link>
@@ -70,5 +73,6 @@ export default function Education() {
       </div>
       <Drawer />
     </div>
+    </>
   );
 }

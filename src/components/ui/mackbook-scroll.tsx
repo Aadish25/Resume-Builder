@@ -23,6 +23,7 @@ import { IconWorld } from "@tabler/icons-react";
 import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 // import Image from "next/image";
 
 export const MacbookScroll = ({
@@ -37,12 +38,11 @@ export const MacbookScroll = ({
   badge?: React.ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-const { scrollYProgress } = useScroll({
-  target: ref,
-  offset: ['start start', 'end start'], // Animation starts when the top of the div aligns with the top of the viewport and ends when the bottom of the div aligns with the bottom of the viewport
-});
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"], // Animation starts when the top of the div aligns with the top of the viewport and ends when the bottom of the div aligns with the bottom of the viewport
+  });
 
-  
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const { scrollYProgress } = useScroll({
   return (
     <div
       ref={ref}
-      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
+      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-32 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
     >
       <motion.h2
         style={{
@@ -336,9 +336,11 @@ export const Keypad = () => {
         <KBtn>
           <span className="block">E</span>
         </KBtn>
-        <KBtn>
-          <span className="block">R</span>
-        </KBtn>
+        <Link to={"/editor/details"}>
+          <KBtn className="bg-red-500">
+            <span className="block">R</span>
+          </KBtn>
+        </Link>
         <KBtn>
           <span className="block">T</span>
         </KBtn>

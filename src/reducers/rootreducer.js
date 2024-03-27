@@ -6,6 +6,8 @@ import education from "./education/education";
 import skills from "./skills/skills";
 import projects from "./projects/projects";
 import addExp from "./addExp/addExp";
+import summary from "./summary/summary";
+import snackbar from "./snackbar/snackbar";
 
 const rootReducer = combineReducers({
   details: details,
@@ -15,6 +17,8 @@ const rootReducer = combineReducers({
   skills: skills,
   projects: projects,
   additionalExp: addExp,
+  summary: summary,
+  snackbar: snackbar,
 });
 
 export default rootReducer;

@@ -10,7 +10,6 @@ export default function ProjectCard({ parentIndex, open }) {
   const dispatch = useDispatch();
   const projectDetails = useSelector((state) => state.projects.projectsArr);
   const project = projectDetails[parentIndex];
-  console.log(project);
 
   const formDetails = [
     { label: "Project Title", name: "projectTitle" },

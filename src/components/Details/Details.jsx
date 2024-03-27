@@ -8,6 +8,7 @@ import {
 } from "../../reducers/details_links/links";
 import Drawer from "../Drawer/Drawer";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 export default function Home() {
   const linksArr = useSelector((state) => state.details_links.linksArr);
@@ -46,7 +47,9 @@ export default function Home() {
     localStorage.setItem("detailsLinks", stringifiedLinksArr);
   };
   return (
-    <div className="flex gap-2 padding w-full flex-col lg:flex-row">
+    <>
+    <Navbar />
+    <div className="flex gap-2 padding w-full flex-col lg:flex-row absolute top-10">
       <div className="flex flex-col-reverse lg:flex-col gap-6 w-full  lg:min-w-1/2  px-6 py-3">
         <div className="flex justify-between items-center flex-col sm:flex-row gap-2">
           <button className="btn  btn-accent max-sm:w-full">Templates</button>
@@ -137,5 +140,6 @@ export default function Home() {
       </div>
       <Drawer />
     </div>
+    </>
   );
 }

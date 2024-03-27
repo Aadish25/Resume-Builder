@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        'primary': ['Poppins']
-      }
+        'primary': ['Poppins'],
+        'title':["Dancing Script"]
+      },
     },
   },
   plugins: [require("daisyui"),addVariablesForColors,],
@@ -36,3 +37,4 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": newVars,
   });
 }
+

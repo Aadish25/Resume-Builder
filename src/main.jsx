@@ -11,8 +11,21 @@ import Education from "./components/Education/Education.jsx";
 import Skills from "./components/Skills/Skills.jsx";
 import Projects from "./components/Projects/Projects.jsx";
 import AdditionalExp from "./components/AdditionalExp/AdditionalExp.jsx";
+import Summary from "./components/Summary/Summary.jsx";
+import Download from "./components/Download/Download.tsx";
+import { SignupHome } from "./components/Signup/SignupHome.jsx";
+import { LoginHome } from "./components/Login/LoginHome.jsx";
+import SnackBar from "./components/SnackBar/SnackBar.jsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/signup",
+    element: <SignupHome />,
+  },
+  {
+    path: "/login",
+    element: <LoginHome />,
+  },
   {
     path: "/",
     element: <Home />,
@@ -44,12 +57,21 @@ const router = createBrowserRouter([
         path: "/editor/additional-experience",
         element: <AdditionalExp />,
       },
+      {
+        path: "/editor/summary",
+        element: <Summary />,
+      },
     ],
+  },
+  {
+    path: "/download",
+    element: <Download />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
+      <SnackBar/>
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
