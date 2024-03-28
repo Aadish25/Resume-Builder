@@ -7,15 +7,21 @@ import { SparklesPreview } from "../SparklesPreview/SparklesPreview";
 
 export default function MacbookScrollDemo() {
   return (
-    <div className="bg-[#0B0B0F] w-full">
-      <Navbar />
-      <SparklesPreview />
-      <MacbookScroll
-        title={<span className="text-8xl font-title">Career Canvas</span>}
-        badge={<Link to="http://localhost:5173/choose-template"></Link>}
-        src={avatar}
-        showGradient={false}
-      />
-    </div>
+    <>
+      {localStorage.getItem("SavedToken") === null ? (
+        <Navigate to={"/login"} replace={true} />
+      ) : (
+        <div className="bg-[#0B0B0F] w-full">
+          <Navbar />
+          <SparklesPreview />
+          <MacbookScroll
+            title={<span className="text-8xl font-title">Career Canvas</span>}
+            badge={<Link to="http://localhost:5173/choose-template"></Link>}
+            src={avatar}
+            showGradient={false}
+          />
+        </div>
+      )}
+    </>
   );
 }

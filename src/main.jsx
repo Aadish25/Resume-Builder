@@ -16,23 +16,18 @@ import Download from "./components/Download/Download.tsx";
 import { SignupHome } from "./components/Signup/SignupHome.jsx";
 import { LoginHome } from "./components/Login/LoginHome.jsx";
 import SnackBar from "./components/SnackBar/SnackBar.jsx";
-import LandingPage from "./components/LandingPage/LandingPage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "https://career-canvas-sage.vercel.app/",
-    element: <LandingPage />,
-  },
-  {
-    path: "https://career-canvas-sage.vercel.app/signup",
+    path: "/signup",
     element: <SignupHome />,
   },
   {
-    path: "https://career-canvas-sage.vercel.app/login",
+    path: "/login",
     element: <LoginHome />,
   },
   {
-    path: "https://career-canvas-sage.vercel.app/home",
+    path: "/",
     element: <Home />,
   },
   {
