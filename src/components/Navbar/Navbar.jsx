@@ -26,7 +26,7 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to={"/home"}>Home</Link>
             </li>
             <li>
               <a>Build Resume</a>
@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/home"}>Home</Link>
           </li>
           <li>
             <details>

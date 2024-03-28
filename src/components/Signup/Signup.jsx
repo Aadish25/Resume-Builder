@@ -80,7 +80,7 @@ export function Signup() {
             );
           })}
         </CardItem>
-        {user && <Navigate to="/" replace={true} />}
+        {user && <Navigate to="/home" replace={true} />}
         <CardItem
           translateZ={20}
           as="button"

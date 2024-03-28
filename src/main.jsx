@@ -16,8 +16,13 @@ import Download from "./components/Download/Download.tsx";
 import { SignupHome } from "./components/Signup/SignupHome.jsx";
 import { LoginHome } from "./components/Login/LoginHome.jsx";
 import SnackBar from "./components/SnackBar/SnackBar.jsx";
+import LandingPage from "./components/LandingPage/LandingPage.jsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
   {
     path: "/signup",
     element: <SignupHome />,
@@ -27,7 +32,7 @@ const router = createBrowserRouter([
     element: <LoginHome />,
   },
   {
-    path: "/",
+    path: "/home",
     element: <Home />,
   },
   {
