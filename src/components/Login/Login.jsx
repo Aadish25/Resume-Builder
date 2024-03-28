@@ -74,8 +74,8 @@ export function Login() {
             );
           })}
         </CardItem>
-        {user && <Navigate to="/home" replace={true} />}
-        <Link to={"/home"}>
+        {user && <Navigate to="/" replace={true} />}
+        <Link to={"/"}>
           <CardItem
             translateZ={20}
             as="button"
