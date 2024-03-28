@@ -20,19 +20,19 @@ import LandingPage from "./components/LandingPage/LandingPage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "https://career-canvas-sage.vercel.app/",
     element: <LandingPage />,
   },
   {
-    path: "/signup",
+    path: "https://career-canvas-sage.vercel.app/signup",
     element: <SignupHome />,
   },
   {
-    path: "/login",
+    path: "https://career-canvas-sage.vercel.app/login",
     element: <LoginHome />,
   },
   {
-    path: "/home",
+    path: "https://career-canvas-sage.vercel.app/home",
     element: <Home />,
   },
   {
