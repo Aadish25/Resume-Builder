@@ -31,9 +31,11 @@ export default function Navbar() {
             <li>
               <a>Build Resume</a>
               <ul className="p-2">
-                <li>
-                  <a>Choose Template</a>
-                </li>
+                <Link to={"/choose-template"}>
+                  <li>
+                    <a>Choose Template</a>
+                  </li>
+                </Link>
                 <li>
                   <Link to={"/editor/details"}>Editor</Link>
                 </li>
@@ -55,9 +57,11 @@ export default function Navbar() {
             <details>
               <summary>Build Resume</summary>
               <ul className="p-2">
-                <li>
-                  <a>Choose Template</a>
-                </li>
+                <Link to={"/choose-template"}>
+                  <li>
+                    <a>Choose Template</a>
+                  </li>
+                </Link>
                 <li>
                   <Link to={"/editor/details"}>Editor</Link>
                 </li>

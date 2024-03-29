@@ -10,7 +10,7 @@ export default function Template1() {
   return (
     <div className="break-words">
       <Temp_Details />
-      <div className="padding-template text-xs ">
+      <div className="sm:padding-template text-xs ">
         <TempSummary />
         <Temp_Education />
         <Temp_Work_Exp />

@@ -16,6 +16,7 @@ import Download from "./components/Download/Download.tsx";
 import { SignupHome } from "./components/Signup/SignupHome.jsx";
 import { LoginHome } from "./components/Login/LoginHome.jsx";
 import SnackBar from "./components/SnackBar/SnackBar.jsx";
+import AllTemplates from "./components/AllTemplates/AllTemplates.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/choose-template",
+    element: <AllTemplates />,
   },
   {
     path: "/editor",
@@ -71,7 +76,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <SnackBar/>
+      <SnackBar />
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
