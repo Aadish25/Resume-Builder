@@ -14,7 +14,6 @@ const options: Options = {
     // margin is in MM, default is Margin.NONE = 0
     margin: Margin.SMALL,
     // default is 'A4'
-    npm i @vercel/speed-insights
     orientation: "landscape",
   },
   canvas: {
