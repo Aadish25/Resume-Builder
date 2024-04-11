@@ -9,6 +9,7 @@ import addExp from "./addExp/addExp";
 import summary from "./summary/summary";
 import snackbar from "./snackbar/snackbar";
 import temp_index from "./temp_index/temp_index";
+import choosePath from "./choose-path/choosePath";
 
 const rootReducer = combineReducers({
   details: details,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   summary: summary,
   snackbar: snackbar,
   temp_index: temp_index,
+  tempPath: choosePath,
 });
 
 export default rootReducer;

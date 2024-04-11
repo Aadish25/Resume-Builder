@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import AdditionalExpCard from "../AdditionalExp_Card/AdditionalExpCard";
 import { setAddExpArr, setAddExpOpen } from "../../reducers/addExp/addExp";
+import { setPath } from "../../reducers/choose-path/choosePath";
 
 export default function AdditionalExp() {
   const dispatch = useDispatch();
+  const {pathname}=useLocation();
   const addExpDetailsArr = useSelector(
     (state) => state.additionalExp.addExpArr
   );
@@ -24,8 +26,11 @@ export default function AdditionalExp() {
   return (
     <div className="flex flex-col-reverse lg:flex-col lg:w-1/2  gap-6 px-6 py-3">
       <div className="flex max-sm:flex-col gap-2 justify-between items-center">
+        <Link to={"/editor/skills"}>
+          <button className="btn  btn-outline max-sm:w-full">Back</button>
+        </Link>
         <Link to={"/choose-template"}>
-          <button className="btn  btn-accent max-sm:w-full">Templates</button>
+          <button className="btn  btn-accent max-sm:w-full" onClick={()=>dispatch(setPath(pathname))}>Templates</button>
         </Link>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}

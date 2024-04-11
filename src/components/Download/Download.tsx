@@ -3,6 +3,7 @@ import React from "react";
 import Template1 from "../Temp_All/Template_1";
 import Navbar from "../Navbar/Navbar";
 import { useSelector } from "react-redux";
+import { DownloadCard } from "../DownloadCard/DownloadCard";
 
 const options: Options = {
   filename: "resume.pdf",
@@ -57,17 +58,12 @@ const Download = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col lg:flex-row justify-between w-full px-4">
-        <div className="mt-20 ">
-          <button
-            onClick={downloadPdf}
-            className="btn btn-secondary btn-outline"
-          >
-            Download PDF
-          </button>
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-evenly w-full px-4">
+        <div className=" ">
+          <DownloadCard downloadFunc={downloadPdf}/>
         </div>
         <div className="mt-20">
-          <div id="container" className="w-[21cm]">
+          <div id="container" className="w-[21cm] hidden md:block">
             {Templates[idx]}
           </div>
         </div>

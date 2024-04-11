@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   setEducationArr,
   setEducationOpen,
 } from "../../reducers/education/education";
 import EducationCard from "../EducationCard/EducationCard";
 import { useDispatch, useSelector } from "react-redux";
-
+import { setPath } from "../../reducers/choose-path/choosePath";
 
 export default function Education() {
   const dispatch = useDispatch();
+  const {pathname}=useLocation();
   const EducationDetailsArr = useSelector(
     (state) => state.education.educationArr
   );
@@ -26,7 +27,12 @@ export default function Education() {
   return (
     <div className="flex flex-col-reverse lg:flex-col gap-6 w-full  lg:w-1/2  px-6 py-3">
       <div className="flex max-sm:flex-col gap-2 justify-between items-center">
-      <Link to={"/choose-template"}><button className="btn  btn-accent max-sm:w-full">Templates</button></Link>
+      <Link to={"/editor/details"}>
+          <button className="btn  btn-outline max-sm:w-full">Back</button>
+        </Link>
+        <Link to={"/choose-template"}>
+          <button className="btn  btn-accent max-sm:w-full" onClick={()=>dispatch(setPath(pathname))}>Templates</button>
+        </Link>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}
           className="btn btn-outline btn-primary max-sm:w-full"
@@ -35,7 +41,7 @@ export default function Education() {
         </button>
         <Link to={"/editor/work-experience"}>
           <button
-            className="btn btn-primary max-sm:w-full"
+            className="btn  btn-primary max-sm:w-full"
             onClick={handleClickNext}
           >
             Next

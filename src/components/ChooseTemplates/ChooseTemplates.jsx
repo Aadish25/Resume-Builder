@@ -1,17 +1,19 @@
 import Template1 from "../Temp_All/Template_1";
 import Navbar from "../Navbar/Navbar";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { setIndex } from "../../reducers/temp_index/temp_index";
 import { Link } from "react-router-dom";
 export default function ChooseTemplates() {
   const dispatch = useDispatch();
+  const tempPath=useSelector((state)=>state.tempPath.tempPath)
+  console.log(tempPath);
   const templatesArr = [Template1];
   const templates = templatesArr.map((Item, index) => {
     return (
-      <Link to={"/editor/details"} key={index}>
+      <Link to={tempPath} key={index}>
         <div
           className="h-[480px] w-[380px] mb-16"
-          onClick={dispatch(setIndex(index))}
+          onClick={()=>dispatch(setIndex(index))}
         >
           <div className="w-[800px] transform origin-top-left scale-[0.398] overflow-hidden">
             <Item />

@@ -52,14 +52,14 @@ export default function Home() {
         <Link to={"/choose-template"}><button className="btn  btn-accent max-sm:w-full">Templates</button></Link>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}
-          className="btn btn-outline btn-primary max-sm:w-full"
+          className="btn  btn-primary max-sm:w-full"
         >
           Preview
         </button>
         <Link to={"/editor/education"}>
           <button
             onClick={handleClickNext}
-            className="btn btn-primary max-sm:w-full"
+            className="btn  btn-primary max-sm:w-full"
           >
             Next
           </button>
