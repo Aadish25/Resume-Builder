@@ -24,7 +24,9 @@ export default function AdditionalExp() {
   return (
     <div className="flex flex-col-reverse lg:flex-col lg:w-1/2  gap-6 px-6 py-3">
       <div className="flex max-sm:flex-col gap-2 justify-between items-center">
-        <button className="btn  btn-accent max-sm:w-full">Templates</button>
+        <Link to={"/choose-template"}>
+          <button className="btn  btn-accent max-sm:w-full">Templates</button>
+        </Link>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}
           className="btn btn-outline btn-primary max-sm:w-full"

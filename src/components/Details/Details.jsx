@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="flex flex-col-reverse lg:flex-col gap-6 w-full  lg:w-1/2  px-6 py-3">
       <div className="flex justify-between items-center flex-col sm:flex-row gap-2">
-        <button className="btn  btn-accent max-sm:w-full">Templates</button>
+        <Link to={"/choose-template"}><button className="btn  btn-accent max-sm:w-full">Templates</button></Link>
         <button
           onClick={() => document.getElementById("my_modal_2").showModal()}
           className="btn btn-outline btn-primary max-sm:w-full"
