@@ -22,7 +22,7 @@ export default function Temp_AdditionalExp() {
         <div className="flex gap-2">
           <p className="font-bold">{item.addExpTitle}</p>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: item.addExpSummary }} />
+        <div dangerouslySetInnerHTML={{ __html: item.addExpSummary }} className="text-justify" />
       </div>
     );
   });

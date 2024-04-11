@@ -76,6 +76,14 @@ export function Signup() {
                   onChange={handleChange}
                   className="input w-full h-8 md:w-64 input-bordered text-black"
                 />
+                {item.label == "Confirm Password" ? (
+                  <p className="text-xs text-yellow-300">
+                    Password must contain atleast one Uppercase,one Lowercase,
+                    one symbol and one number!
+                  </p>
+                ) : (
+                  ""
+                )}
               </label>
             );
           })}

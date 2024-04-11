@@ -26,7 +26,7 @@ export default function Temp_Work_Exp() {
           </p>
         </div>
         <p className="font-semibold">{item.positionTitle}</p>
-        <div dangerouslySetInnerHTML={{ __html: item.workSummary }} />
+        <div dangerouslySetInnerHTML={{ __html: item.workSummary }} className="text-justify"/>
       </div>
     );
   });

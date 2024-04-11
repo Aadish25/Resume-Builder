@@ -30,7 +30,7 @@ export default function Temp_Education() {
         <p className="font-semibold">
           {item.schoolName}, <span>{item.schoolLocation}</span>
         </p>
-        <div dangerouslySetInnerHTML={{ __html: item.description }} />
+        <div dangerouslySetInnerHTML={{ __html: item.description }} className="text-justify"/>
       </div>
     );
   });

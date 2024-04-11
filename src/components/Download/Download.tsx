@@ -1,6 +1,7 @@
 import generatePDF, { Resolution, Margin, Options } from "react-to-pdf";
 import React from "react";
 import Template1 from "../Temp_All/Template_1";
+import Navbar from "../Navbar/Navbar";
 
 const options: Options = {
   filename: "resume.pdf",
@@ -9,12 +10,13 @@ const options: Options = {
   // increases the image quality but also the size of the PDF, so be careful
   // using values higher than 10 when having multiple pages generated, it
   // might cause the page to crash or hang.
-  resolution: Resolution.EXTREME,
+  resolution: Resolution.MEDIUM,
   page: {
     // margin is in MM, default is Margin.NONE = 0
     margin: Margin.SMALL,
     // default is 'A4'
-    orientation: "landscape",
+    orientation: "portrait",
+    format: "A4",
   },
   canvas: {
     // default is 'image/jpeg' for better size performance
@@ -43,12 +45,19 @@ const downloadPdf = () => generatePDF(getTargetElement, options);
 
 const Download = () => {
   return (
-    <div>
-      <button onClick={downloadPdf}>Download PDF</button>
-      <div id="container">
-        <Template1 />
+    <>
+      <Navbar />
+      <div className="flex flex-col lg:flex-row justify-between w-full px-4">
+        <div className="mt-20 ">
+          <button onClick={downloadPdf} className="btn btn-secondary btn-outline">Download PDF</button>
+        </div>
+        <div className="mt-20">
+          <div id="container" className="w-[21cm]">
+            <Template1 />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

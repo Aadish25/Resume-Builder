@@ -41,9 +41,12 @@ export default function Navbar() {
                 </li>
               </ul>
             </li>
-            <li>
-              <a>Contact</a>
-            </li>
+            <Link to={"/ats-score"}>
+              {" "}
+              <li>
+                <a>ATS Score</a>
+              </li>
+            </Link>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">Career Canvas</a>
@@ -68,9 +71,12 @@ export default function Navbar() {
               </ul>
             </details>
           </li>
-          <li>
-            <a>Contact</a>
-          </li>
+          <Link to={"/ats-score"}>
+            {" "}
+            <li>
+              <a>ATS Score</a>
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="navbar-end">

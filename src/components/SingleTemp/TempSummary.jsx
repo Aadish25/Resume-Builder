@@ -22,7 +22,7 @@ export default function TempSummary() {
         ""
       )}
       <br />
-      <div dangerouslySetInnerHTML={{ __html: summary }} />
+      <div dangerouslySetInnerHTML={{ __html: summary }} className="text-justify" />
     </div>
   );
 }

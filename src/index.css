@@ -11,7 +11,7 @@
     @apply sm:px-8 px-4 sm:py-12 py-16;
   }
   .padding-template {
-    @apply px-20 py-10;
+    @apply px-10 py-2 pb-5;
   }
   ul {
     @apply list-disc;

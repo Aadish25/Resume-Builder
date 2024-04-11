@@ -16,7 +16,9 @@ import Download from "./components/Download/Download.tsx";
 import { SignupHome } from "./components/Signup/SignupHome.jsx";
 import { LoginHome } from "./components/Login/LoginHome.jsx";
 import SnackBar from "./components/SnackBar/SnackBar.jsx";
-import AllTemplates from "./components/AllTemplates/AllTemplates.jsx";
+import ChooseTemplates from "./components/ChooseTemplates/ChooseTemplates.jsx";
+import ATS from "./components/ATS/ATS.jsx";
+import Editor from "./components/Editor/Editor.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,44 +35,48 @@ const router = createBrowserRouter([
   },
   {
     path: "/choose-template",
-    element: <AllTemplates />,
+    element: <ChooseTemplates />,
   },
   {
     path: "/editor",
     children: [
       {
         path: "/editor/details",
-        element: <Details />,
+        element: <Editor />,
       },
       {
         path: "/editor/education",
-        element: <Education />,
+        element: <Editor />,
       },
       {
         path: "/editor/work-experience",
-        element: <Work />,
+        element: <Editor />,
       },
       {
         path: "/editor/projects",
-        element: <Projects />,
+        element: <Editor />,
       },
       {
         path: "/editor/skills",
-        element: <Skills />,
+        element: <Editor />,
       },
       {
         path: "/editor/additional-experience",
-        element: <AdditionalExp />,
+        element: <Editor />,
       },
       {
         path: "/editor/summary",
-        element: <Summary />,
+        element: <Editor />,
       },
     ],
   },
   {
     path: "/download",
     element: <Download />,
+  },
+  {
+    path: "/ats-score",
+    element: <ATS />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

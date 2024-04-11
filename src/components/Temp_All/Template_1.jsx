@@ -8,7 +8,7 @@ import Temp_Work_Exp from "../SingleTemp/Temp_Work_Exp";
 
 export default function Template1() {
   return (
-    <div className="break-words">
+    <div className="break-words page-break print:page-break-always">
       <Temp_Details />
       <div className="sm:padding-template text-xs ">
         <TempSummary />

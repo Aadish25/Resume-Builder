@@ -8,6 +8,7 @@ import projects from "./projects/projects";
 import addExp from "./addExp/addExp";
 import summary from "./summary/summary";
 import snackbar from "./snackbar/snackbar";
+import temp_index from "./temp_index/temp_index";
 
 const rootReducer = combineReducers({
   details: details,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   additionalExp: addExp,
   summary: summary,
   snackbar: snackbar,
+  temp_index: temp_index,
 });
 
 export default rootReducer;

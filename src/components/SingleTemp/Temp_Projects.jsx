@@ -27,7 +27,7 @@ export default function Temp_Projects() {
         <Link to={item.projectLink} target="blank">
           <p className="font-semibold text-blue-400 lowercase ">{item.projectTitle.split(" ").join("")}</p>
         </Link>
-        <div dangerouslySetInnerHTML={{ __html: item.projectSummary }} />
+        <div dangerouslySetInnerHTML={{ __html: item.projectSummary }} className="text-justify"/>
       </div>
     );
   });
