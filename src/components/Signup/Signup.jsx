@@ -71,7 +71,7 @@ export function Signup() {
                   <span className="label-text text-white">{item.label}</span>
                 </div>
                 <input
-                  type="text"
+                  type={item.name=="password"?"password":"text"}
                   name={item.name}
                   onChange={handleChange}
                   className="input w-full h-8 md:w-64 input-bordered text-black"
