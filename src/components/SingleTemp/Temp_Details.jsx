@@ -4,11 +4,17 @@ import { Link, useLocation } from "react-router-dom";
 export default function Temp_Details() {
   const { pathname } = useLocation();
   const linksArrRedux = useSelector((state) => state.details_links.linksArr);
-  const linksArrLocal = JSON.parse(localStorage.getItem("detailsLinks"));
+  const linksArrLocal =
+    JSON.parse(localStorage.getItem("detailsLinks")) == null
+      ? linksArrRedux
+      : JSON.parse(localStorage.getItem("detailsLinks"));
   const linksArr =
     pathname === "/editor/details" ? linksArrRedux : linksArrLocal;
   const detailsRedux = useSelector((state) => state.details);
-  const detailsLocal = JSON.parse(localStorage.getItem("details"));
+  const detailsLocal =
+    JSON.parse(localStorage.getItem("details")) == null
+      ? detailsRedux
+      : JSON.parse(localStorage.getItem("details"));
   const {
     firstName,
     lastName,
